@@ -20,7 +20,7 @@
 | ⑤ 최종 승인 (내부 회람) | `plan_phase` 상태 머신: `draft → post_first → locked` ([`code/state.py`](code/state.py)). 확정 전에는 카드 생성 비활성화 | ✅ |
 | ⑥ 다운로드 및 SNS 실시간 자동 배포 | Step 5 ZIP 패키지 ([`code/package_export.py`](code/package_export.py) — PPTX 기획안 + `jpeg/ko/`, `jpeg/en/`) + Step 6 Instagram 자동 발행 ([`code/supabase_storage.py`](code/supabase_storage.py) → [`code/buffer_publish.py`](code/buffer_publish.py)) | ✅ |
 | 다국어 (영문) 외신 홍보 | [`plan_llm.translate_plan_to_english`](code/plan_llm.py) + GPT Image 영문 세트 (로고 워드마크 `Ministry of Finance and Economy`) | ✅ |
-| 맞춤형 디자인 툴 (템플릿·MI·폰트) | 800×1000 캔버스, 맑은 고딕 / 맑은 고딕 Bold, `themes/mofe_body.yaml` 섹션 톤 5종(neutral·green·blue·purple·orange), 본문 레이아웃 2종(여백형·흰 카드형), 캐릭터 PNG 업로드 | ✅ |
+| 맞춤형 디자인 툴 (템플릿·MI·폰트) | 1000×1350 캔버스, 맑은 고딕 / 맑은 고딕 Bold, `themes/mofe_body.yaml` 섹션 톤 5종(neutral·green·blue·purple·orange), 본문 레이아웃 2종(여백형·흰 카드형), 캐릭터 PNG 업로드 | ✅ |
 | 정서·이미지 안전 검토 (기획서 비포함, 자체 강화) | [`code/content_filter.py`](code/content_filter.py) — 일본·식민지 잔재, 북한, 정치 이념(보수·진보), 젠더·세대·지역 갈등, 혐오 표현을 LLM 기획·이미지 프롬프트·생성 전에 차단 | ✅ (자체 추가) |
 | 세션 복구 | [`code/job_store.py`](code/job_store.py) — `data/jobs.sqlite` 에 단계별 스냅샷 저장, 새로고침/세션 복귀 시 복원 | ✅ (자체 추가) |
 
@@ -50,7 +50,7 @@
 [Step 4] 카드 이미지 생성 (JPEG)
   └─ ① "표지 시안 3종 (A/B/C)" 생성 (1장이면 결과물 후보 3종)
      ② 시안 선택
-     ③ "한국어 카드 생성" → 800×1000 JPEG (page 1~N)
+     ③ "한국어 카드 생성" → 1000×1350 JPEG (page 1~N)
      ※ 안전 필터 통과한 기획만 API 호출
 
 [Step 5] 결과 확인 · 산출물
@@ -172,7 +172,7 @@ BUFFER_ORGANIZATION_ID=         # 선택
 
 ### 4.3 디자인 커스터마이즈
 
-- 카드 해상도: **800 × 1000 px** (Instagram 4:5 세로형)
+- 카드 해상도: **1000 × 1350 px** (비율 **20:27**, 세로형 카드뉴스)
 - 한글 폰트: Windows `malgun.ttf` / `malgunbd.ttf` 자동 탐색 ([`render_cards.py:16-17`](code/render_cards.py#L16-L17))
 - 본문 정본: [`themes/mofe_body.yaml`](themes/mofe_body.yaml)
 - 1페이지 가이드: [`themes/template1/템플릿-1.txt`](themes/template1/템플릿-1.txt)

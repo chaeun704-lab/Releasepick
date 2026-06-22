@@ -4,7 +4,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from english_logo import load_english_logo_bytes as _load_english_logo_bytes
+from english_logo import load_english_logo_bytes as _load_english_logo_bytes_legacy
+from mofe_mi_logos import load_english_mi_logo_bytes, load_korean_mi_logo_bytes
 
 CODE_DIR = Path(__file__).resolve().parent
 ROOT9 = CODE_DIR.parent
@@ -63,5 +64,13 @@ def load_english_logo_bytes(
     *,
     ko_logo_bytes: bytes | None = None,
 ) -> bytes | None:
-    """영문 카드뉴스 합성용 — `logo.png` 엠블럼 + Ministry of Finance and Economy (구 영문 PNG 미사용)."""
-    return _load_english_logo_bytes(ko_logo_path, ko_logo_bytes=ko_logo_bytes)
+    """영문 카드뉴스 합성용 — `themes/재정경제부 MI/영문-좌우조합.png`."""
+    data = load_english_mi_logo_bytes()
+    if data:
+        return data
+    return _load_english_logo_bytes_legacy(ko_logo_path, ko_logo_bytes=ko_logo_bytes)
+
+
+def load_korean_logo_bytes() -> bytes | None:
+    """한국어 카드뉴스 합성용 — `themes/재정경제부 MI/국문-좌우조합.png`."""
+    return load_korean_mi_logo_bytes()

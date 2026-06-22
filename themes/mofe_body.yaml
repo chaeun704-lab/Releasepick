@@ -1,15 +1,15 @@
 # 재정경제부 카드뉴스 본문 템플릿 (참고: themes/template2/템플릿1/템플릿(본문).txt)
 id: mofe_body
-label: 본문형 800×1000 (템플릿 본문)
+label: 본문형 1000×1350 (템플릿 본문)
 ref: themes/template2/템플릿1/템플릿(본문).txt
 canvas:
-  width: 800
-  height: 1000
-# 안전 여백: 좌우 55~70, 상하 40~60 → 기본값 60/50
+  width: 1000
+  height: 1350
+# 안전 여백: 좌우 55~70, 상하 40~60 → 1000×1350 기준 스케일
 margins:
-  x: 60
-  y: 48
-  bottom_reserve: 78
+  x: 75
+  y: 65
+  bottom_reserve: 105
 palette:
   page_bg: "#F6F8F3"
   page_bg_alt: "#F7F8F1"
@@ -26,45 +26,50 @@ section_tones:
   neutral:
     stripe: "#4D99D8"
     title_on_page: "#111111"
+    body_accent: "#2C4A7C"
   green:
     stripe: "#13824B"
     title_on_page: "#0F7A45"
+    body_accent: "#3F7A2E"
   blue:
     stripe: "#4D99D8"
     title_on_page: "#236EA8"
+    body_accent: "#236EA8"
   purple:
     stripe: "#7C70C4"
     title_on_page: "#5C4FA8"
+    body_accent: "#5C4FA8"
   orange:
     stripe: "#ED8D4D"
     title_on_page: "#C45A20"
-# 800×1000 기준 권장 크기 (§3-3), font_scale로 배율 조정
+    body_accent: "#C45A20"
+# 1000×1350 기준 권장 크기 (§3-3), font_scale로 배율 조정
 sizes:
-  series_capsule: 23
-  head_copy_small: 21
-  main_title: 48
-  bullet: 31
-  footnote: 20
-  cover_series_on_band: 26
-  cover_head: 22
-  cover_slide_title: 44
-  closing_main: 34
-  closing_sub: 26
+  series_capsule: 29
+  head_copy_small: 26
+  main_title: 60
+  bullet: 39
+  footnote: 25
+  cover_series_on_band: 33
+  cover_head: 28
+  cover_slide_title: 55
+  closing_main: 43
+  closing_sub: 33
 layout:
-  top_stripe_height: 6
-  cover_band_height: 200
-  capsule_radius: 22
-  white_card_radius: 26
-  white_card_margin_x: 52
-  white_card_top: 168
-  white_card_width: 696
-  white_card_height: 720
+  top_stripe_height: 8
+  cover_band_height: 270
+  capsule_radius: 28
+  white_card_radius: 33
+  white_card_margin_x: 65
+  white_card_top: 227
+  white_card_width: 870
+  white_card_height: 972
 logo_box:
-  top_left: [52, 40, 160, 56]
-  top_right: [588, 40, 160, 56]
-  bottom_center: [120, 928, 560, 58]
+  top_left: [65, 54, 200, 76]
+  top_right: [735, 54, 200, 76]
+  bottom_center: [150, 1253, 700, 78]
 character_slot:
-  bottom_right: [480, 620, 280, 340]
+  bottom_right: [600, 837, 350, 459]
 variants:
   cover:
     background: "#F4F5EF"

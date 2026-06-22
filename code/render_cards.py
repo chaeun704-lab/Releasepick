@@ -13,6 +13,11 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 THEMES_DIR = ROOT / "themes"
+
+# 카드뉴스 최종 JPEG 캔버스 (GPT Image 생성 후 리사이즈 기준)
+CARD_WIDTH = 1000
+CARD_HEIGHT = 1350
+CARD_SIZE: tuple[int, int] = (CARD_WIDTH, CARD_HEIGHT)
 WINDOWS_MALGUN = Path(r"C:\Windows\Fonts\malgun.ttf")
 WINDOWS_MALGUN_BD = Path(r"C:\Windows\Fonts\malgunbd.ttf")
 
@@ -70,8 +75,17 @@ def _text_width(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.ImageFont)
 
 def _tone(theme: dict[str, Any], tone_key: str) -> dict[str, str]:
     tones = theme.get("section_tones") or {}
-    t = tones.get(tone_key) or tones.get("neutral") or {"stripe": "#4D99D8", "title_on_page": "#111111"}
-    return {"stripe": str(t.get("stripe", "#4D99D8")), "title_on_page": str(t.get("title_on_page", "#111111"))}
+    t = tones.get(tone_key) or tones.get("neutral") or {
+        "stripe": "#4D99D8",
+        "title_on_page": "#111111",
+        "body_accent": "#2C4A7C",
+    }
+    stripe = str(t.get("stripe", "#4D99D8"))
+    return {
+        "stripe": stripe,
+        "title_on_page": str(t.get("title_on_page", "#111111")),
+        "body_accent": str(t.get("body_accent", stripe)),
+    }
 
 
 def section_tone_palette(theme_id: str, tone_key: str) -> dict[str, str]:
@@ -80,11 +94,11 @@ def section_tone_palette(theme_id: str, tone_key: str) -> dict[str, str]:
 
 
 def get_logo_box(theme_id: str, position: str) -> tuple[int, int, int, int]:
-    """로고 합성 영역 (x, y, width, height) — 800×1000 기준."""
+    """로고 합성 영역 (x, y, width, height) — CARD_WIDTH×CARD_HEIGHT 기준."""
     theme = _load_theme(theme_id)
     boxes = theme.get("logo_box") or {}
     key = position if position in boxes else "bottom_center"
-    box = boxes.get(key) or boxes.get("bottom_center") or [200, 918, 400, 72]
+    box = boxes.get(key) or boxes.get("bottom_center") or [250, 1253, 500, 97]
     return int(box[0]), int(box[1]), int(box[2]), int(box[3])
 
 
@@ -166,6 +180,21 @@ def _logo_make_background_transparent(logo: Image.Image, *, threshold: int = 40)
     return rgba
 
 
+def trim_logo_rgba(logo: Image.Image, *, pad: int = 2, threshold: int = 40) -> Image.Image:
+    """투명·검은 여백을 잘라 로고 콘텐츠만 남긴다."""
+    rgba = _logo_make_background_transparent(logo, threshold=threshold)
+    bbox = rgba.getbbox()
+    if not bbox:
+        return rgba
+    x0, y0, x1, y1 = bbox
+    if pad:
+        x0 = max(0, x0 - pad)
+        y0 = max(0, y0 - pad)
+        x1 = min(rgba.width, x1 + pad)
+        y1 = min(rgba.height, y1 + pad)
+    return rgba.crop((x0, y0, x1, y1))
+
+
 def _paste_logo(
     base: Image.Image,
     logo_bytes: bytes | None,
@@ -175,7 +204,7 @@ def _paste_logo(
     if not logo_bytes:
         return
     try:
-        logo = _logo_make_background_transparent(Image.open(BytesIO(logo_bytes)))
+        logo = trim_logo_rgba(Image.open(BytesIO(logo_bytes)))
     except OSError:
         return
     boxes = theme.get("logo_box") or {}
@@ -311,7 +340,7 @@ def render_slide(
     role = slide.get("role", "body")
     variants = theme.get("variants") or {}
     v = variants.get(role) or variants.get("body") or {}
-    canvas = theme.get("canvas") or {"width": 800, "height": 1000}
+    canvas = theme.get("canvas") or {"width": CARD_WIDTH, "height": CARD_HEIGHT}
     w, h = int(canvas["width"]), int(canvas["height"])
     mg = theme.get("margins") or {"x": 60, "y": 48, "bottom_reserve": 78}
     mx = int(mg.get("x", 60))

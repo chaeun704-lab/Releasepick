@@ -20,7 +20,6 @@ from caption_llm import (
 )
 from content_filter import ContentFilterError
 from image_gen import (
-    ENGLISH_LOGO_WORDMARK,
     build_theme_description,
     design_variant_block,
     design_variant_ids,
@@ -482,7 +481,10 @@ def step_upload(client: OpenAI) -> None:
             st.session_state.concept_thumb_paths = {}
 
         if target_pages == 1:
-            st.caption("1장 제작 — 포스터형 템플릿 (`themes/template1/템플릿-1.txt`) 적용")
+            st.caption(
+                "1장 제작 — template2 표지·본문과 동일 디자인 시스템 "
+                "(`themes/template1/템플릿-1.txt` + `template2/템플릿1`)"
+            )
             st.session_state.multipage_variant = DEFAULT_MULTIPAGE_VARIANT
         else:
             v_labels = multipage_variant_labels()
@@ -824,12 +826,12 @@ def step_generate(client: OpenAI) -> None:
         st.caption(
             "1장 제작 — 생성된 A/B/C가 곧 **최종 후보**입니다. "
             "마음에 드는 1장을 선택 후 확정하세요 (추가 API 생성 없음). "
-            f"영문 세트는 결과 단계에서 「{ENGLISH_LOGO_WORDMARK}」 로고로 별도 생성합니다."
+            f"영문 세트는 결과 단계에서 공식 **영문 MI 로고**로 별도 생성합니다."
         )
     else:
         st.caption(
-            f"동일 템플릿·디자인으로 **한국어 세트** 생성 후 번역해 **영어 세트** 생성. "
-            f"한·영 모두 GPT Image가 정부 로고를 그립니다. 영문은 「{ENGLISH_LOGO_WORDMARK}」."
+            "동일 템플릿·디자인으로 **한국어 세트** 생성 후 번역해 **영어 세트** 생성. "
+            "한국어는 `국문-좌우조합.png`, 영어는 `영문-좌우조합.png` 공식 MI 로고가 합성됩니다."
         )
     with st.expander("정서·이미지 안전 필터 안내"):
         st.markdown(

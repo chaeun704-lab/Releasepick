@@ -1,235 +1,56 @@
-# 카드뉴스 1장(단일 페이지) 디자인 템플릿 — 통계·데이터 인포그래픽형
+# 카드뉴스 1장(단일 페이지) — template2 통합형 (풍부·다양)
 
-> 정부 부처 정책·통계 발표용 **1장 카드뉴스(인포그래픽형)** 디자인 가이드
-> 참고 이미지: [`2월소비자물가.jpg`](./2월소비자물가.jpg) — 재정경제부 소비자물가 동향 카드
-> 정부로고(기관로고, 재정경제부 로고)는 `C:\Users\USER\Releasepick\logo.png`에 위치하며 해당 로고를 사용한다.
-
----
-
-## 0. 이 템플릿의 정체성 (가장 중요)
-
-이 1장 템플릿은 **2장 이상 템플릿(`themes/template2`의 표지·본문)과 디자인이 절대로 겹치지 않는다.**
-2장 템플릿이 "밝은 컬러 배경 + 3D 클레이 캐릭터 + 키워드 배지 + 캠페인 슬로건" 중심이라면,
-**이 1장 템플릿은 "흰 배경 + 큰 통계 수치 + 데이터 차트 + 비교 컬럼 + 실물형 3D 오브젝트"** 중심의
-**통계·데이터 발표용 인포그래픽**이다.
-
-| 구분 | **이 1장 인포그래픽형 (사용)** | 2장 표지·본문 (금지·회피) |
-|---|---|---|
-| 배경 | **순백 `#FFFFFF` / 아주 옅은 회색** | 하늘색 그라데이션·웜 화이트·구름·도시 실루엣 |
-| 주인공 | **큰 숫자(%·억원)·라인/바 차트** | 3D 클레이 사람 캐릭터·모모·페페 |
-| 정보 단위 | **2열 비교 컬럼 + 가는 선 아이콘 + 세로 분리선** | 키워드 배지(알약)·시리즈 칩·CTA 밴드 |
-| 일러스트 | **실물형 3D 오브젝트(장바구니·생선·동전 등)를 모서리에 소품으로** | 캐릭터 군상·말풍선·원형 장식 배경 |
-| 하단 | **회색 선언형 요약 문단(키워드 굵게)** | 기관 캐릭터 + 슬로건 보드 |
-
-> **금지:** 시리즈 칩, 키워드 배지 줄, CTA 밴드("지금 신청하기 →"), 3D 사람 캐릭터, 하늘색 그라데이션 배경, 구름·도시 실루엣. 이것들은 2장 템플릿 전용이다.
+> **동일 디자인 시스템:** `themes/template2/템플릿1/템플릿(표지).txt` + `템플릿(본문).txt`
+> 본문 문안은 **단일 블록**, 시각 디자인은 **풍부·다양**하게.
 
 ---
 
-## 1. 캔버스 / 비율
+## 0. 본문 구성 (유지)
 
-| 항목 | 값 |
+- 헤드라인 아래 **3칸 요약·배지 줄·1·2 번호 분할** 금지
+- 모든 불릿 → **단일 본문 카드 1개**에 연속 배치
+
+---
+
+## 1. 시각 다양화 (풍부하게)
+
+| 요소 | 적용 |
 |---|---|
-| 종횡비 | **4 : 5 (세로형)** |
-| 권장 해상도 | 1080 × 1350 px |
-| 앱 생성 해상도 | 800 × 1000 px (동일 비율, GPT Image용) |
-| 안전 여백 | 좌우 64 px, 상하 56 px |
-| 배경 | **순백 `#FFFFFF`** 기본. 카드/차트 영역만 아주 옅은 회색 `#F3F5F8` |
-
-화면 전체가 깨끗한 흰 바탕이며, 정보 블록(비교 컬럼·차트)은 얇은 회색 면이나 라운드 카드로만 구분한다.
+| **배경** | 섹션 톤 그라데이션, 구름·실루엣·원형 장식 |
+| **헤드라인** | 단일 색 ExtraBold — 형광펜·컬러박스·밑줄 **금지** |
+| **단일 본문 카드** | 컬러 헤더 칩, 좌측 액센트 띠, 그림자, **불릿 내 키워드 Bold+액센트색** |
+| **3D** | 클레이 캐릭터+오브젝트 25~40%, 눈에 띄게 |
+| **시안 A/B/C** | 후보마다 배경·구도·3D 배치 다르게 |
 
 ---
 
-## 2. 페이지 구조 (위→아래 6블록)
+## 2. 시안별 차별 (A/B/C)
+
+### 시안 A · 하늘색 중앙형
+- 스카이블루 그라데이션 + 구름, 가운데 정렬, 중하단 대형 3D
+
+### 시안 B · 웜톤 좌우 분할
+- 웜 오프화이트 + 민트·퍼플 원형 장식, 좌 텍스트·우 3D
+
+### 시안 C · 대각 밴드·하단 비주얼
+- 대각 컬러 밴드 + 도시 실루엣, 하단 3D 오브젝트 밴드
+
+---
+
+## 3. 페이지 구조
 
 ```
-┌──────────────────────────────────────────┐
-│ ① 기관 로고+명(좌상단)        [3D 소품(우상)]│  ← 상단 8%
-├──────────────────────────────────────────┤
-│ ② 헤드라인: 라벨 + 거대 수치 + 단위        │  ← 18~24%
-│    예) "2월 소비자물가  2.0% 상승"          │
-│    회색 보조설명 1~2줄                      │
-├──────────────────────────────────────────┤
-│ ③ 2열 비교 컬럼 (가운데 세로 분리선)        │  ← 22~28%
-│   [선아이콘] 지표A      │  [선아이콘] 지표B  │
-│    설명 + 큰 수치       │   설명 + 큰 수치   │
-│    (괄호 메타)          │   (괄호 메타)      │
-├──────────────────────────────────────────┤
-│ ④ 데이터 차트 (라인/바, 라운드 카드)        │  ← 26~32%
-│    범례·끝점 수치 라벨·축 캡션  [3D 소품]    │
-├──────────────────────────────────────────┤
-│ ⑤ 회색 선언형 요약 문단 (키워드 굵게)       │  ← 10~14%
-└──────────────────────────────────────────┘
-```
-
-핵심: **한 장 안에서 "무슨 수치가 / 얼마나 / 어떤 추세로 / 정부는 어떻게"** 가 위에서 아래로 한 번에 읽힌다.
-
----
-
-## 3. 블록별 가이드
-
-### ① 상단 — 로고 + 소품
-- **좌상단**에 재정경제부 엠블럼 + "재정경제부" 텍스트를 인라인으로(높이 40~52 px).
-- **우상단 모서리**에 주제를 상징하는 **실물형 3D 오브젝트** 1점(누끼, 그림자만). 예: 식료품 가득한 장바구니, 동전 더미, 주택 모형. 사람 캐릭터 금지.
-
-### ② 헤드라인 — 거대 수치 중심
-- 작은 라벨(예: `2월 소비자물가`)을 네이비로 먼저, 그 아래/옆에 **가장 큰 핵심 수치**를 배치.
-- 핵심 수치(예: `2.0%`)는 **블루 `#2E6FB7`**, 뒤따르는 동사/방향어(`상승`·`하락`)는 **네이비 `#1A2A4A`**.
-- 그 아래 **회색 보조 설명 1~2줄**(예: "식료품과 에너지를 제외한 **근원물가는 2.3% 상승**"). 강조어만 진한 색.
-
-### ③ 2열 비교 컬럼
-- 화면을 좌우 2칸으로 나누고 **가운데 얇은 세로 분리선**(`#D7DCE3`, 1~2 px).
-- 각 칸 상단에 **가는 선(라인) 픽토그램** 1개(장바구니·가격표 등) — **단색, 채움 없는 외곽선 스타일**. 3D·컬러 아이콘 금지.
-- 칸 구성: `지표명(Bold)` → `설명 한 줄` → `큰 수치(블루/네이비, ExtraBold)` → `(괄호 메타 회색)`.
-
-### ④ 데이터 차트
-- **라인 차트** 또는 **막대 차트**를 옅은 회색/흰 라운드 카드 위에 배치.
-- 선 2종: 주지표 = **네이비 실선 `#1B2A4E`**, 보조지표 = **틸/그린 점선 `#2FA39A`**.
-- 시작·끝 데이터 점에 **수치 라벨**을 직접 표기(예: 5.0 / 4.0 → 2.3 / 2.0).
-- 우상단 **범례**, 우하단 단위 캡션 `(%,전년동월비)`, 하단 중앙에 차트 제목 칩(`소비자물가·근원물가`).
-- 차트 모서리에 작은 3D 소품(예: 생선) 1점 허용 — 과하지 않게.
-
-### ⑤ 하단 요약 문단
-- **중앙 정렬 회색 문장**(`#5A6270`), 2~3줄, 행간 1.6.
-- "정부는 ~ 할 계획입니다" 식 **선언·약속 톤**. 핵심 키워드만 **진한 네이비 Bold**.
-- 예: "정부는 국제유가 변동성이 확대된 만큼 **석유류 가격**과 **수급 상황**을 면밀히 모니터링하며 **체감물가 안정**을 위해 **신속히 대응**할 계획입니다."
-
----
-
-## 4. 타이포그래피 (1080 × 1350 기준)
-
-서체군: Pretendard / 나눔스퀘어 Neo / 에스코어드림 (산세리프, 공공 톤).
-
-| 역할 | 크기 | 굵기 | 컬러 |
-|---|---|---|---|
-| 기관명(로고 옆) | 26–30 px | Bold | `#1A2A4A` |
-| 헤드라인 라벨 | 30–38 px | Bold | `#1A2A4A` |
-| **거대 핵심 수치** | **104–132 px** | **Black (900)** | **블루 `#2E6FB7`** + 방향어 네이비 |
-| 헤드라인 보조설명 | 26–30 px | Regular(키워드 Bold) | `#6B7280` / 강조 `#1A2A4A` |
-| 비교 컬럼 지표명 | 34–40 px | Bold | `#1A2A4A` |
-| 비교 컬럼 수치 | 56–72 px | ExtraBold | 블루/네이비 |
-| 괄호 메타 `(’26.1월 2.0%)` | 22–26 px | Regular | `#8A9099` |
-| 차트 라벨/축 | 22–28 px | Medium | 선 색과 동일 |
-| 하단 요약 | 28–34 px | Regular(키워드 Bold) | `#5A6270` / 강조 `#1A2A4A` |
-
----
-
-## 5. 컬러 시스템 — 데이터 인포그래픽 (기본)
-
-흰 배경 위에서 **블루 + 네이비 + 틸그린**을 데이터 강조에만 절제해서 쓴다. 섹션 톤(앱 설정)이 있으면 그 색을 핵심 수치·차트 주선에 우선 적용한다.
-
-| 역할 | HEX |
-|---|---|
-| 페이지 배경 | `#FFFFFF` |
-| 정보 블록 면 | `#F3F5F8` |
-| 메인 텍스트(네이비) | `#1A2A4A` |
-| 핵심 수치·주지표선 | `#2E6FB7` ~ `#1B2A4E` |
-| 보조지표(점선)·틸 강조 | `#2FA39A` |
-| 보조 회색 텍스트 | `#6B7280` / 더 흐리게 `#8A9099` |
-| 분리선·격자선 | `#D7DCE3` |
-| 경고·급등 강조 | `#E14B4B` (필요 시 1회만) |
-
----
-
-## 6. 일러스트·아이콘 가이드
-
-두 종류만 쓴다. **사람 3D 캐릭터·플랫 컬러 아이콘은 쓰지 않는다.**
-
-1. **실물형 3D 오브젝트 (모서리 소품)** — 주제를 상징하는 사물 1~2점. 사실적 매트 3D 렌더, 배경 없이 누끼, 부드러운 그림자. 예: 식료품 장바구니, 동전·지폐, 주택 모형, 자동차, 생선·농산물.
-2. **데이터 픽토그램 (비교 컬럼)** — **가는 단색 외곽선** 아이콘. 채움·그라데이션 없이 1.5~2 px 라인. 예: 장바구니, 가격표, 그래프, 화살표.
-
-> 이미지 안에 가짜 로고·임의 영문 텍스트를 만들지 말 것. 한글 수치·라벨은 정책 원문과 일치시킨다.
-
----
-
-## 7. 체크리스트 (1장 출고 전)
-
-- [ ] 배경이 **흰색**인가 (하늘색 그라데이션·구름·캐릭터가 없는가)
-- [ ] 가장 큰 요소가 **핵심 통계 수치**인가
-- [ ] 2열 비교 컬럼이 **세로 분리선 + 가는 선 아이콘**으로 구성됐는가
-- [ ] 차트의 시작·끝 점에 **수치 라벨**과 **범례·단위 캡션**이 있는가
-- [ ] 하단에 **회색 선언형 요약 문단**(키워드 굵게)이 있는가
-- [ ] 3D 소품이 **사물형**인가 (사람 캐릭터·모모/페페가 아닌가)
-- [ ] 좌상단 **기관 로고+명**, 가짜 로고/임의 텍스트 없음
-- [ ] 2장 표지·본문 디자인 요소(시리즈 칩·키워드 배지·CTA 밴드)와 겹치지 않는가
-- [ ] 일본·북한·식민지 잔재, 정치 이념·갈등, 혐오 표현이 없는가
-
----
-
-## 8. 빠른 시작 (HTML/CSS 예시)
-
-```html
-<article class="cn1 cn1--infographic">
-  <header class="cn1-top">
-    <span class="cn1-org"><!-- 엠블럼 --> 재정경제부</span>
-    <span class="cn1-hero-obj"><!-- 3D 장바구니 소품 --></span>
-  </header>
-
-  <section class="cn1-headline">
-    <span class="cn1-label">2월 소비자물가</span>
-    <h1 class="cn1-figure"><em>2.0%</em> 상승</h1>
-    <p class="cn1-sub">식료품과 에너지를 제외한 <b>근원물가는 2.3% 상승</b></p>
-  </section>
-
-  <section class="cn1-compare">
-    <div class="col">
-      <span class="ico ico-basket"></span>
-      <h3>근원물가</h3>
-      <p>개인서비스 상승폭 확대 등으로 전년동월비</p>
-      <strong class="num">2.3% 상승</strong>
-      <span class="meta">(’26.1월 2.0%)</span>
-    </div>
-    <div class="divider"></div>
-    <div class="col">
-      <span class="ico ico-tag"></span>
-      <h3>생활물가</h3>
-      <p>식품 오름폭 축소 등으로 전년동월비</p>
-      <strong class="num">1.8% 상승</strong>
-      <span class="meta">(’26.1월 2.2%)</span>
-    </div>
-  </section>
-
-  <section class="cn1-chart">
-    <!-- 라인 차트: 소비자물가(네이비 실선) + 근원물가(틸 점선) -->
-    <span class="chart-title">소비자물가·근원물가</span>
-  </section>
-
-  <p class="cn1-foot">
-    정부는 국제유가 변동성이 확대된 만큼 <b>석유류 가격</b>과 <b>수급 상황</b>을
-    면밀히 모니터링하며 <b>체감물가 안정</b>을 위해 <b>신속히 대응</b>할 계획입니다
-  </p>
-</article>
-```
-
-```css
-.cn1 { aspect-ratio: 4/5; padding: 56px 64px; background: #FFFFFF;
-  color: #1A2A4A; font-family: 'Pretendard', sans-serif;
-  display: grid; gap: 28px;
-  grid-template-rows: auto auto auto 1fr auto; }
-.cn1-top { display: flex; justify-content: space-between; align-items: flex-start; }
-.cn1-org { font-weight: 700; font-size: 28px; }
-.cn1-figure { font-size: 120px; font-weight: 900; line-height: 1; margin: 6px 0; }
-.cn1-figure em { font-style: normal; color: #2E6FB7; }
-.cn1-label { font-size: 34px; font-weight: 700; }
-.cn1-sub { font-size: 28px; color: #6B7280; }
-.cn1-sub b { color: #1A2A4A; }
-.cn1-compare { display: grid; grid-template-columns: 1fr 2px 1fr; align-items: start; }
-.cn1-compare .divider { background: #D7DCE3; width: 2px; height: 100%; }
-.cn1-compare .col { text-align: center; padding: 0 24px; }
-.cn1-compare .num { display: block; font-size: 64px; font-weight: 800; color: #2E6FB7; }
-.cn1-compare .meta { color: #8A9099; font-size: 24px; }
-.cn1-chart { background: #F3F5F8; border-radius: 24px; padding: 28px; position: relative; }
-.cn1-foot { text-align: center; color: #5A6270; font-size: 30px; line-height: 1.6; }
-.cn1-foot b { color: #1A2A4A; }
+시리즈 칩 → 헤드라인(단색 ExtraBold) → [단일 꾸민 본문 카드] → 3D 일러스트 → 마무리
 ```
 
 ---
 
-## 9. AI 이미지 생성용 프롬프트 (참고)
+## 4. AI 프롬프트 요약
 
 ```text
-Create a Korean government statistics infographic card, vertical 4:5 ratio, clean pure white background, minimal flat editorial layout. Top-left: small Korean ministry emblem with text. Top-right corner: one realistic 3D rendered object related to the topic (e.g. green shopping basket full of groceries), cut out with soft shadow, NO people characters. Headline area: a small navy label and one very large bold percentage figure in blue with a Korean direction word in navy, plus a gray sub line with one bold keyword. Middle: two comparison columns separated by a thin vertical divider line, each with a thin single-color outline pictogram (basket, price tag), a bold metric name, a short description and a large blue number with a small gray parenthetical. Below: a clean line chart on a light gray rounded card, navy solid line and teal dashed line, value labels at start and end points, a legend, an axis unit caption, and a small chart title chip; optional small 3D object accent. Bottom: a centered gray declarative summary sentence with a few bold navy keywords. Trustworthy public-sector data report style, lots of white space, blue + navy + teal accents only. No fake logos, no random English text, no clay-style human characters, no sky-blue gradient.
+Rich MOEF single-page card 1000×1350: gradient background, decorative shapes, clean single-color ExtraBold headline (NO marker/highlighter), ONE styled unified body card (header chip, shadow, inline keyword highlights in bullets only), prominent 3D clay character+objects, apply variant A/B/C composition. NO 3-block summary under headline. NO numbered 1/2/3 split. Logo empty.
 ```
 
 ---
 
-*본 가이드는 `themes/template2`의 표지·본문 캠페인형 가이드와 의도적으로 다른 디자인 시스템(흰 배경·통계 수치·데이터 차트·실물형 3D 소품)을 사용한다. 1장 카드뉴스는 통계·정책 동향을 한 화면에서 데이터 중심으로 완결한다.*
+*본문은 한 덩어리. 제목은 깔끔한 타이포, **강조는 본문 불릿 안**에서만.*

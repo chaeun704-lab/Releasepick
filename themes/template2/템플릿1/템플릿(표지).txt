@@ -18,26 +18,26 @@
 
 ## 2. 권장 캔버스 크기 및 비율
 
-### A안: 정방형 SNS 카드뉴스
+### A안: 정방형 SNS 카드뉴스 (파생)
 
-- 크기: `1080px × 1080px`
+- 크기: `1000px × 1000px` (1:1 크롭 파생)
 - 용도: 인스타그램, 페이스북 카드뉴스, 홈페이지 썸네일
 - 특징: 정책명·헤드라인·캐릭터를 균형 있게 배치하기 좋음
 
-### B안: 세로형 표지
+### B안: 세로형 표지 (앱 기본)
 
-- 크기: `1080px × 1350px`
-- 비율: 4:5
-- 용도: 인스타그램 피드, 모바일 최적화 카드뉴스
+- 크기: `1000px × 1350px`
+- 비율: 20:27
+- 용도: 인스타그램 피드, 모바일 최적화 카드뉴스, **앱 생성 해상도**
 - 특징: 상단 헤드라인, 하단 인물·오브젝트 구성에 적합
 
-### C안: 포스터형 세로 카드
+### C안: 포스터형 세로 카드 (인쇄·확대용 파생)
 
-- 크기: `900px × 1200px` 또는 `1080px × 1440px`
+- 크기: **1000px × 1350px** 기준 비율(20:27) 유지하며 확대 (예: 2000×2700)
 - 용도: 온라인 홍보 포스터, 메인 이미지
 - 특징: 큰 메시지와 풍부한 일러스트를 동시에 표현 가능
 
-참고 이미지의 인상은 세로형 비율에 가깝다. 따라서 기본 제작은 **1080×1350px**을 권장한다.
+참고 이미지의 인상은 세로형 비율에 가깝다. 따라서 기본 제작은 **1000×1350px**을 권장한다 (앱 생성 해상도와 동일).
 
 ---
 
@@ -426,19 +426,19 @@ Sub Gray              #6B7280
 ### 12-1. 하늘색 캠페인형
 
 ```text
-Create a Korean government policy card news cover design, vertical 4:5 ratio, bright sky blue gradient background, soft white clouds, subtle city skyline at the bottom, large bold Korean headline area in the upper center, three blue rounded keyword badges below the headline, friendly 3D clay-style people characters at the bottom, including tourists, young adults, and a family, with small 3D objects such as airplane, travel card, suitcase, map pin, camera, and sunglasses. Clean public campaign style, soft lighting, minimal layout, trustworthy and friendly atmosphere, space at the bottom center for Korean government logo. No random text, no fake logos.
+Create a Korean government policy card news cover design, vertical portrait ratio (1000×1350), bright sky blue gradient background, soft white clouds, subtle city skyline at the bottom, large bold Korean headline area in the upper center, three blue rounded keyword badges below the headline, friendly 3D clay-style people characters at the bottom, including tourists, young adults, and a family, with small 3D objects such as airplane, travel card, suitcase, map pin, camera, and sunglasses. Clean public campaign style, soft lighting, minimal layout, trustworthy and friendly atmosphere, space at the bottom center for Korean government logo. No random text, no fake logos.
 ```
 
 ### 12-2. 화이트·민트 전략형
 
 ```text
-Create a Korean government policy card news cover design, vertical 4:5 ratio, clean white background, bold black Korean headline area aligned to the upper left, modern 3D clay-style policy illustrations, mint green circular background shapes, small local shops, community map, AI robot assistant with laptop, people discussing policy, soft pastel colors, minimal public sector design, elegant spacing, subtle hand-drawn curved line decorations, space at bottom center for Korean government logo. No random text, no fake logos.
+Create a Korean government policy card news cover design, vertical portrait ratio (1000×1350), clean white background, bold black Korean headline area aligned to the upper left, modern 3D clay-style policy illustrations, mint green circular background shapes, small local shops, community map, AI robot assistant with laptop, people discussing policy, soft pastel colors, minimal public sector design, elegant spacing, subtle hand-drawn curved line decorations, space at bottom center for Korean government logo. No random text, no fake logos.
 ```
 
 ### 12-3. AI 정책홍보 플랫폼형
 
 ```text
-Create a modern Korean government AI policy communication platform card news cover, vertical 4:5 ratio, clean white and navy design, large bold Korean headline area, friendly 3D AI robot character holding a laptop, floating cards showing policy documents, card news slides, video thumbnail, SNS icons, and approval check mark, public sector trustworthy design, soft blue and mint accents, minimal layout, professional but friendly, space for government logo at the bottom. No random text, no fake logos.
+Create a modern Korean government AI policy communication platform card news cover, vertical portrait ratio (1000×1350), clean white and navy design, large bold Korean headline area, friendly 3D AI robot character holding a laptop, floating cards showing policy documents, card news slides, video thumbnail, SNS icons, and approval check mark, public sector trustworthy design, soft blue and mint accents, minimal layout, professional but friendly, space for government logo at the bottom. No random text, no fake logos.
 ```
 
 ---
@@ -524,7 +524,7 @@ AI 기반 정책홍보 자동화 플랫폼
 가장 안정적인 기본 조합은 다음과 같다.
 
 ```text
-크기: 1080×1350px
+크기: 1000×1350px
 배경: 하늘색 그라데이션 또는 화이트 배경
 폰트: Pretendard ExtraBold + Medium
 헤드라인: 상단 중앙 또는 좌상단 2~3줄
